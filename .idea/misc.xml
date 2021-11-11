@@ -20,6 +20,7 @@
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/drawable/xiaomilogo1_background.xml" value="0.225" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/drawable/xiaomilogo_background.xml" value="0.225" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/about_us_fragment.xml" value="0.371875" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_apple.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_fav.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_headphone.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_home.xml" value="0.371875" />
@@ -27,6 +28,7 @@
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_main.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_profile.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_realme.xml" value="0.371875" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_recylerview_phone.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_samsung.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_search.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/activity_sign_up.xml" value="0.371875" />
@@ -43,6 +45,7 @@
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/fragment_profile.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/fragment_search.xml" value="0.371875" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/item_list.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/item_option.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/logout_fragment.xml" value="0.371875" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/GrabYourPhone/app/src/main/res/layout/my_profile_fragment.xml" value="0.371875" />
