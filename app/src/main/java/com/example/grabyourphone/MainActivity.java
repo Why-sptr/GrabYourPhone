@@ -4,18 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public CardView smartphone_card1, headphone_card2, tab_card3, smartwatch_card4;
+    public CardView samsung_card1, apple_card2, xiaomi_card3, realme_card4;
 
 
     @Override
@@ -23,15 +21,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        smartphone_card1 = (CardView) findViewById(R.id.smartphone_card);
-        headphone_card2 = (CardView) findViewById(R.id.headphone_card);
-        tab_card3 = (CardView) findViewById(R.id.tab_card);
-        smartwatch_card4 = (CardView) findViewById(R.id.smartwatch_card);
+        samsung_card1 = (CardView) findViewById(R.id.samsung_card);
+        apple_card2 = (CardView) findViewById(R.id.apple_card);
+        xiaomi_card3 = (CardView) findViewById(R.id.xiaomi_card);
+        realme_card4 = (CardView) findViewById(R.id.realme_card);
 
-        smartphone_card1.setOnClickListener(this);
-        headphone_card2.setOnClickListener(this);
-        tab_card3.setOnClickListener(this);
-        smartwatch_card4.setOnClickListener(this);
+        samsung_card1.setOnClickListener(this);
+        apple_card2.setOnClickListener(this);
+        xiaomi_card3.setOnClickListener(this);
+        realme_card4.setOnClickListener(this);
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
@@ -43,11 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
 
-                    case R.id.nav_fav:
-                        startActivity(new Intent(getApplicationContext(),FavActivity.class));
-                        finish();
-                        overridePendingTransition(0,0);
-                        return;
+
 
                     case  R.id.nav_search:
                         startActivity(new Intent(getApplicationContext(),SearchActivity.class));
@@ -74,23 +68,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i;
 
         switch (v.getId()){
-            case R.id.smartphone_card:
-                i = new Intent(this, SmartphoneActivity.class);
+            case R.id.samsung_card:
+                i = new Intent(this, SamsungActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.headphone_card:
-                i = new Intent(this, HeadphoneActivity.class);
+            case R.id.apple_card:
+                i = new Intent(this, AppleActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.tab_card:
-                i = new Intent(this, TabActivity.class);
+            case R.id.xiaomi_card:
+                i = new Intent(this, XiaomiActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.smartwatch_card:
-                i = new Intent(this, SmartwatchActivity.class);
+            case R.id.realme_card:
+                i = new Intent(this, RealmeActivity.class);
                 startActivity(i);
                 break;
         }

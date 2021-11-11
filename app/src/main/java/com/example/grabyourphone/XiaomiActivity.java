@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class HeadphoneActivity extends AppCompatActivity {
+public class XiaomiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_headphone);
+        setContentView(R.layout.activity_xiaomi);
     }
 }

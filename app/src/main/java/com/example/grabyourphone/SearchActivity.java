@@ -29,11 +29,7 @@ public class SearchActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return;
 
-                    case R.id.nav_fav:
-                        startActivity(new Intent(getApplicationContext(),FavActivity.class));
-                        finish();
-                        overridePendingTransition(0,0);
-                        return;
+
 
 
                     case  R.id.nav_search:

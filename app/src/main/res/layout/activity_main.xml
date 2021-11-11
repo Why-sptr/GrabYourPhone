@@ -72,7 +72,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="38dp"
             android:columnCount="2"
-            android:rowCount="2"
+            android:rowCount="4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/view2"
@@ -82,7 +82,72 @@
             app:layout_constraintTop_toBottomOf="@+id/profile_photo">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/smartphone_card"
+                android:id="@+id/samsung_card"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                android:layout_marginLeft="8dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/samsunglogo"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Samsung"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apple_card"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="62dp"
+                        android:layout_height="62dp"
+                        android:src="@drawable/applelogo"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Apple"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/xiaomi_card"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_margin="16dp"
@@ -98,7 +163,7 @@
                     <ImageView
                         android:layout_width="62dp"
                         android:layout_height="62dp"
-                        android:src="@drawable/phone"
+                        android:src="@drawable/milogo"
                         app:tint="@color/black" />
 
                     <TextView
@@ -106,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/poppins"
-                        android:text="Smartphone"
+                        android:text="Xiaomi"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -114,7 +179,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/headphone_card"
+                android:id="@+id/realme_card"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_margin="16dp"
@@ -127,9 +192,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
-                        android:src="@drawable/headphone"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/realmelogo"
                         app:tint="@color/black" />
 
                     <TextView
@@ -137,76 +202,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/poppins"
-                        android:text="Headphone"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/tab_card"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_margin="16dp"
-                android:layout_marginLeft="8dp"
-                app:cardCornerRadius="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
-                        android:src="@drawable/tab"
-                        app:tint="@color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Tab"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/smartwatch_card"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="62dp"
-                        android:layout_height="62dp"
-                        android:src="@drawable/smartwatch"
-                        app:tint="@color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Smartwatch"
+                        android:text="Realme"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
+
+
 
 
         </GridLayout>
@@ -218,7 +222,11 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rounded_corner"
         android:elevation="30dp"
         app:itemIconSize="30dp"
@@ -228,7 +236,6 @@
         app:menu="@menu/bottom_menu"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="30dp"
-        android:layout_alignParentBottom="true"
         tools:layout_editor_absoluteY="419dp" />
 
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.grabyourphone;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +14,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -23,6 +26,8 @@ public class SignUpActivity extends AppCompatActivity {
     EditText name, number, email, pass;
     Button btnSignup;
     TextView signUpTV;
+
+
 
     FirebaseAuth auth;
 
@@ -40,8 +45,9 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignup = findViewById(R.id.btn_signup);
         signUpTV = findViewById(R.id.login_tv);
 
-        // take firebase instance here
+        // firebase
         auth = FirebaseAuth.getInstance();
+
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +110,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -113,3 +121,4 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 }
+

@@ -12,25 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrabYourPhone">
         <activity
-            android:name=".TabActivity"
+            android:name=".XiaomiActivity"
             android:exported="false" />
         <activity
-            android:name=".SmartwatchActivity"
+            android:name=".RealmeActivity"
             android:exported="false" />
         <activity
-            android:name=".HeadphoneActivity"
+            android:name=".AppleActivity"
             android:exported="false" />
         <activity
-            android:name=".SmartphoneActivity"
+            android:name=".SamsungActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FavActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
