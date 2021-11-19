@@ -42,7 +42,7 @@ public class DetailPhoneActivity extends AppCompatActivity {
 
         phoneImage = findViewById(R.id.imagePhoneDetail);
         namePhone = findViewById(R.id.phoneNameDetail);
-        brandPhone = findViewById(R.id.phoneBrandDetail);
+
         releasePhone = findViewById(R.id.phoneReleaseDetail);
         dimensionPhone = findViewById(R.id.phoneDimensionDetail);
         OsPhone = findViewById(R.id.phoneOsDetail);
