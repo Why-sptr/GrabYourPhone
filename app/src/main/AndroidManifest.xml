@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrabYourPhone">
         <activity
+            android:name=".DetailPhoneActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecylerviewPhone"
             android:exported="false" />
         <activity

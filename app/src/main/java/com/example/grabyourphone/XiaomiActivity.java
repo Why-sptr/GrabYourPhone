@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -24,6 +26,8 @@ import java.util.List;
 public class XiaomiActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private DataAdapter adapter;
+    private ArrayList<ModelData> listData;
     private ProgressBar progressBar;
 
     @Override
@@ -34,8 +38,6 @@ public class XiaomiActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progress_bar);
 
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         progressBar.setVisibility(View.VISIBLE);
         getData();
@@ -53,30 +55,48 @@ public class XiaomiActivity extends AppCompatActivity {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-
-
                         try {
+
+                            listData = new ArrayList<>();
+
                             JSONObject jsonObject = response.getJSONObject("data");
                             JSONArray jsonArray = jsonObject.getJSONArray("phones");
 
-                            ModelData[] modelData = new ModelData[0];
                             for (int i = 0; i <jsonArray.length(); i++) {
                                 JSONObject object = jsonArray.getJSONObject(i);
                                 String phone_name = object.getString("phone_name");
                                 String brand = object.getString("brand");
                                 String image = object.getString("image");
+                                String specification = object.getString("detail");
 
-                                modelData = new ModelData[]{(new ModelData(phone_name, brand, image))};
+                                listData.add(new ModelData(phone_name, brand, image, specification));
+
+                                Log.d("ddddd", "onResponse: " + phone_name +" "+ brand);
                             }
+
                             progressBar.setVisibility(View.GONE);
 
-                            DataAdapter myMovieAdapter = new DataAdapter(modelData,XiaomiActivity.this);
-                            recyclerView.setAdapter(myMovieAdapter);
+                            adapter = new DataAdapter(listData, new DataAdapter.Callback() {
+                                @Override
+                                public void onClick(int position) {
+                                    Intent intent = new Intent(getApplicationContext(), DetailPhoneActivity.class);
+                                    intent.putExtra("specification", listData.get(position).getSpecification());
+                                    startActivity(intent);
+                                }
+                            });
+                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(layoutManager);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
                     }
+
+
+
 
                     @Override
                     public void onError(ANError anError) {

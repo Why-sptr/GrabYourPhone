@@ -149,8 +149,8 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0)
                 {
-                    String name = dataSnapshot.child("name").getValue().toString();
-                    String  phone = dataSnapshot.child("phone").getValue().toString();
+                    String name = dataSnapshot.child("Name").getValue().toString();
+                    String  phone = dataSnapshot.child("Phone").getValue().toString();
 
                     edtName.setText(name);
                     edtPhone.setText(phone);

@@ -1,6 +1,7 @@
 package com.example.grabyourphone;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,35 +10,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
+import javax.security.auth.callback.Callback;
+
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
-    ModelData[] myMovieData;
-    Context context;
+    private ArrayList<ModelData> myMovieData;
+    private Callback callback;
 
-    public DataAdapter(ModelData[] myMovieData,AppleActivity activity) {
-        this.myMovieData = myMovieData;
-        this.context = activity;
+    public interface Callback{
+        void onClick(int position);
     }
 
-    public DataAdapter(ModelData[] myMovieData, SamsungActivity samsungActivity) {
-        this.myMovieData = myMovieData;
-        this.context = samsungActivity;
+    public DataAdapter(ArrayList<ModelData> listData, Callback callback) {
+        this.myMovieData = listData;
+        this.callback = callback;
     }
-
-    public DataAdapter(ModelData[] myMovieData, RealmeActivity realmeActivity) {
-        this.myMovieData = myMovieData;
-        this.context = realmeActivity;
-    }
-
-    public DataAdapter(ModelData[] myMovieData, XiaomiActivity xiaomiActivity) {
-        this.myMovieData = myMovieData;
-        this.context = xiaomiActivity;
-    }
-
 
     @NonNull
     @Override
@@ -50,36 +44,37 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull DataAdapter.ViewHolder holder, int position) {
-        final ModelData myMovieDataList = myMovieData[position];
-        holder.textViewName.setText(myMovieDataList.getMovieName());
-        holder.textViewDate.setText(myMovieDataList.getMovieDate());
+        holder.textViewName.setText(myMovieData.get(position).getPhoneName());
+        holder.textViewDate.setText(myMovieData.get(position).getBrand());
         Picasso.get()
-                .load(myMovieDataList.getMovieImage())
+                .load(myMovieData.get(position).getPhoneImage())
                 .into(holder.movieImage);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, myMovieDataList.getMovieName(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return myMovieData.length;
+        return (myMovieData != null) ? myMovieData.size() : 0;
 
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView movieImage;
         TextView textViewName;
         TextView textViewDate;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             movieImage = itemView.findViewById(R.id.imageview);
             textViewName = itemView.findViewById(R.id.textName);
             textViewDate = itemView.findViewById(R.id.textdate);
+            cardView = itemView.findViewById(R.id.itemCardview);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    callback.onClick(getAdapterPosition());
+                }
+            });
 
         }
     }
