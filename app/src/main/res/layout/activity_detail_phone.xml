@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/imagePhoneDetail"
         android:layout_width="150dp"
-        android:layout_height="201dp"
+        android:layout_height="198dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="50dp"
         android:src="@drawable/imgphone" />

@@ -1,6 +1,8 @@
 package com.example.grabyourphone;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,11 +46,20 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull DataAdapter.ViewHolder holder, int position) {
-        holder.textViewName.setText(myMovieData.get(position).getPhoneName());
+        ModelData del = myMovieData.get(position);
+        holder.textViewName.setText(del.getPhoneName());
         holder.textViewDate.setText(myMovieData.get(position).getBrand());
-        Picasso.get()
-                .load(myMovieData.get(position).getPhoneImage())
-                .into(holder.movieImage);
+        Picasso.get().load(del.getPhoneImage()).resize(150,198).into(holder.movieImage);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DetailPhoneActivity.class);
+                intent.putExtra("name", del.getPhoneName());
+                intent.putExtra("image", del.getPhoneImage());
+                intent.putExtra("detail", del.getSpecification());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -12,6 +12,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +34,7 @@ public class DetailPhoneActivity extends AppCompatActivity {
     private TextView storagePhone;
 
     private String specificationAPI;
-    private String name, brand, release, dimension, os, storage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,6 @@ public class DetailPhoneActivity extends AppCompatActivity {
 
         phoneImage = findViewById(R.id.imagePhoneDetail);
         namePhone = findViewById(R.id.phoneNameDetail);
-
         releasePhone = findViewById(R.id.phoneReleaseDetail);
         dimensionPhone = findViewById(R.id.phoneDimensionDetail);
         OsPhone = findViewById(R.id.phoneOsDetail);
@@ -51,6 +51,10 @@ public class DetailPhoneActivity extends AppCompatActivity {
         bundle = getIntent().getExtras();
         if (bundle != null){
             specificationAPI = bundle.getString("specification");
+            String name = bundle.getString("name");
+            String image = bundle.getString("image");
+            namePhone.setText(name);
+            Picasso.get().load(image).into(phoneImage);
 
             AndroidNetworking.get(specificationAPI)
                     .addPathParameter("pageNumber", "0")
@@ -65,15 +69,14 @@ public class DetailPhoneActivity extends AppCompatActivity {
 
                             try {
 
-
                                 JSONObject object = response.getJSONObject("data");
 
-                                name = object.getString("phone_name");
-                                brand = object.getString("brand");
-                                release = object.getString("release_date");
-                                dimension = object.getString("dimension");
-                                os = object.getString("os");
-                                storage = object.getString("storage");
+                                String pname = object.getString("phone_name");
+                                String   brand = object.getString("brand");
+                                String  release = object.getString("release_date");
+                                String dimension = object.getString("dimension");
+                                String os = object.getString("os");
+                                String storage = object.getString("storage");
 
 
                                 Log.d("ppppp", "onCreate: " + name +" "+brand );
@@ -88,15 +91,12 @@ public class DetailPhoneActivity extends AppCompatActivity {
                         @Override
                         public void onError(ANError anError){
 
-                            namePhone.setText(name);
-                            brandPhone.setText(brand);
-                            releasePhone.setText(release);
-                            dimensionPhone.setText(dimension);
-                            OsPhone.setText(os);
-                            storagePhone.setText(storage);
+
                             Log.d("pppp", "onResponse: erorrr");
                         }
                     });
+
+
 
 
 
