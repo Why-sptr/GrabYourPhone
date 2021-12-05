@@ -2,14 +2,28 @@ package com.example.grabyourphone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class SearchActivity extends AppCompatActivity {
+    Bundle bundle;
+    TextView txtbrand;
+    RecyclerView brands;
+    ProgressDialog brandDialog;
+    ArrayList<ModelData> brandList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,4 +58,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

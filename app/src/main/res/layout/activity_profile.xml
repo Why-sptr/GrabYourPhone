@@ -1,99 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileActivity">
-
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/person"
-            app:civ_border_color="@color/blue"
-            app:civ_border_width="2dp"
-            />
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/change_profile_btn"
-            android:layout_below="@+id/profile_image"
-            android:text="Change Profile"
-            android:layout_centerHorizontal="true"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Profile"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/blue"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardPreventCornerOverlap="false"
+            android:layout_marginBottom="50dp"
+            app:cardCornerRadius="75dp" >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/iv_cp"
+                android:background="@drawable/person"
+                android:clickable="true"
+                android:scaleType="fitCenter" />
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTint="@color/blue"
+            android:drawableLeft="@drawable/person"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:hint="Name"
+            android:id="@+id/et_name_cp"
+            android:background="@drawable/textbox"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTint="@color/blue"
+            android:drawableLeft="@drawable/phone"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:hint="Phone"
+            android:id="@+id/et_phone_cp"
+            android:background="@drawable/textbox"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTint="@color/blue"
+            android:drawableLeft="@drawable/info"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:hint="Bio"
+            android:id="@+id/et_bio_cp"
+            android:background="@drawable/textbox"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTint="@color/blue"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:hint="Email"
+            android:id="@+id/et_email_cp"
+            android:background="@drawable/textbox"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:drawableTint="@color/blue"
+            android:drawableLeft="@drawable/web"
+            android:drawablePadding="10dp"
+            android:padding="15dp"
+            android:hint="Website"
+            android:id="@+id/et_website_cp"
+            android:background="@drawable/textbox"
+            android:layout_margin="4dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_cp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Save Profile"
+            android:layout_marginBottom="50dp" />
+        <ProgressBar
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_below="@+id/change_profile_btn"
-            android:layout_marginTop="17dp"
-            android:textSize="20sp"
-            android:hint="Your Name"
-            android:layout_marginEnd="20dp"
-            android:layout_alignStart="@+id/phone_number"
-            android:textColor="#000000"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/phone_number"
-            android:hint="Your Phone No. "
-            android:layout_below="@+id/name"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/progressbar_cp"
+            android:visibility="invisible"/>
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_margin="16dp"
-            android:layout_below="@+id/phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnClose"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="Close"
-                android:textStyle="bold"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="#ffffff"
-                android:layout_marginRight="6dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/btnSave"
-                android:layout_width="0dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:layout_weight="1"
-                android:textStyle="bold"
-
-                android:textColor="#ffffff"
-                android:text="Save"
-                android:layout_marginLeft="6dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

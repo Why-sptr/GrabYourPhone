@@ -67,7 +67,7 @@ public class XiaomiActivity extends AppCompatActivity {
                                 String phone_name = object.getString("phone_name");
                                 String brand = object.getString("brand");
                                 String image = object.getString("image");
-                                String specification = object.getString("detail");
+                                String specification = object.getString("slug");
 
                                 listData.add(new ModelData(phone_name, brand, image, specification));
 

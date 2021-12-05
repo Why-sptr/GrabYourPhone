@@ -5,10 +5,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -67,7 +71,7 @@ public class AppleActivity extends AppCompatActivity {
                                 String phone_name = object.getString("phone_name");
                                 String brand = object.getString("brand");
                                 String image = object.getString("image");
-                                String specification = object.getString("detail");
+                                String specification = object.getString("slug");
 
                                 listData.add(new ModelData(phone_name, brand, image, specification));
 
@@ -104,4 +108,5 @@ public class AppleActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }

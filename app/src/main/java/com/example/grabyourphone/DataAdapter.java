@@ -24,7 +24,12 @@ import javax.security.auth.callback.Callback;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     private ArrayList<ModelData> myMovieData;
+    ArrayList<ColorSpace.Model> desclist;
     private Callback callback;
+
+    public DataAdapter(ArrayList<ColorSpace.Model> arrayList){
+        this.desclist = arrayList;
+    }
 
     public interface Callback{
         void onClick(int position);
@@ -89,4 +94,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
         }
     }
+
+
 }
